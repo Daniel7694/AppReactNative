@@ -1,15 +1,21 @@
 import React from 'react'
 import { TouchableOpacity, Text, StyleSheet } from 'react-native'
-export const RoundedButton = () => {
+
+interface Props {
+    text: string;
+    onPress: () => void,
+   }
+
+export const RoundedButton = ({ text, onPress}: Props) => {
  return (
  <TouchableOpacity
  style={styles.RoundedButton}
- onPress={() => { }}
+ onPress={() => onPress()}
  >
- <Text style={styles.textButton} >ENTRAR</Text>
+ <Text style={styles.textButton} >{ text}</Text>
  </TouchableOpacity>
  )
-}
+} 
 const styles = StyleSheet.create({
  RoundedButton: {
  width: '100%',
