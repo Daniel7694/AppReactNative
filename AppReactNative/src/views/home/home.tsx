@@ -1,7 +1,8 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, TextInput, Button, ToastAndroid }
     from 'react-native';
-import { RoundedButton } from './src/components/RoundedButton';
+import { RoundedButton } from '../../../src/components/RoundedButton';
+
 export const HomeScreen = () => {
     return (
         <View style={styles.container}>
@@ -20,7 +21,7 @@ export const HomeScreen = () => {
                 <Text style={styles.formText}>INGRESAR</Text>
                 <View style={styles.formInput}>
                     <Image style={styles.formIcon}
-                        source={require('./assets/email.png')}
+                        source={require('../../../assets/email.png')}
                     />
                     <TextInput
                         style={styles.formTextInput}
@@ -30,7 +31,7 @@ export const HomeScreen = () => {
                 </View>
                 <View style={styles.formInput}>
                     <Image style={styles.formIcon}
-                        source={require('./assets/password.png')}
+                        source={require('../../../assets/password.png')}
                     />
                     <TextInput
                         style={styles.formTextInput}
@@ -120,4 +121,4 @@ const styles = StyleSheet.create({
         marginTop: 10,
         fontWeight: 'bold',
     },
-}
+})
