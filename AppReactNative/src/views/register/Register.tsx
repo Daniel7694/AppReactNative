@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState} from 'react'; 
 import { useNavigation } from '@react-navigation/native';
 import { View, Text, StyleSheet, Image, TextInput, ToastAndroid, Touchable,
 TouchableOpacity } from 'react-native';
@@ -7,6 +7,10 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../../App';
 
 export const RegisterScreen = () => {
+    const [email, setEmail] = useState('');
+ const [password, setPassword] = useState('');
+ const navigation =
+useNavigation<StackNavigationProp<RootStackParamList>>();
  return (
  <View style={styles.container}>
  <Image
@@ -50,6 +54,8 @@ export const RegisterScreen = () => {
  style={styles.formTextInput}
  placeholder='Correo electrónico'
  keyboardType='email-address'
+ value={email}
+ onChangeText={ text => setEmail(text)}
  />
  </View>
  <View style={styles.formInput}>
@@ -82,11 +88,15 @@ export const RegisterScreen = () => {
  placeholder='Confirmar Contraseña'
  keyboardType='default'
  secureTextEntry={true}
+ value={password}
+ onChangeText={ text => setPassword(text)}
  />
  </View>
  <View style={{ marginTop: 30 }}>
- <RoundedButton text='CONFIRMAR' onPress={() =>
-ToastAndroid.show('HOLA!', ToastAndroid.SHORT)} />
+ <RoundedButton text='ENTRAR' onPress={() =>{
+ console.log('Email: ' + email);
+ console.log('Password: ' + password);
+ }} />
  </View>
  </View>
  </View>

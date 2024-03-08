@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState} from 'react'; 
 import { StyleSheet, Text, View, Image, TextInput, Button, ToastAndroid }
     from 'react-native';
 import { RoundedButton } from '../../../src/components/RoundedButton';
@@ -6,6 +6,8 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { useNavigation } from '@react-navigation/native';
 import { RootStackParamList } from '../../../App';
 export const HomeScreen = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
     const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
 
     return (
