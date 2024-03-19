@@ -9,12 +9,13 @@ interface Props {
 
 export const RoundedButton = ({ text, onPress}: Props) => {
  return (
- <TouchableOpacity
- style={styles.RoundedButton}
- onPress={() => onPress()}
- >
- <Text style={styles.textButton} >{ text}</Text>
- </TouchableOpacity>
+    <TouchableOpacity
+        style={styles.RoundedButton}
+        onPress={() => onPress()}
+
+ >  
+        <Text style={styles.textButton} >{ text}</Text>
+    </TouchableOpacity>
  )
 } 
 const styles = StyleSheet.create({
