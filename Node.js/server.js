@@ -19,8 +19,9 @@ app.set('port', port);
 * LLamando las rutas
 */
 users(app);
-//direccion ip V4 de la maquina, consultar con ipconfig
-server.listen(3000, '192.168.1.43' || 'localhost', function() {
+//direccion ip V4 de la maquina, consultar con ipconfig 
+//mi ip:192.168.1.43
+server.listen(3000, '10.175.83.205' || 'localhost', function() {
  console.log('Aplicación de NodeJS ' + process.pid + ' inicio en el puerto ' + port);
 });
 app.get('/', (req, res) => { 

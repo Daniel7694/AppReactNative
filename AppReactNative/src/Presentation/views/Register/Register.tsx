@@ -4,11 +4,23 @@ TouchableOpacity } from 'react-native';
 import { RoundedButton } from
 '../../../Presentation/components/RoundedButton'; 
 import useViewModel from './ViewModel'; 
+import { ApiDelivery } from '../../../Data/sources/remote/api/ApiDelivery'; 
 import { CustomTextInput } from '../../components/CusatomTextInput';
 import styles from './styles'; 
 export const RegisterScreen = () => { 
  const { name, lastname, phone, email, password, confirmPassword, onChange, 
-register } = useViewModel();
+ } = useViewModel();
+
+const register = async () => {
+    try {
+    const response = await ApiDelivery.post('/users/create', //values
+    );
+    console.log('RESPONSE: ' + JSON.stringify(response));
+   
+    } catch (error) {
+    console.log('ERROR: ' + error);
+    }
+    } 
  return ( 
  <View style={styles.container}>
  <Image
